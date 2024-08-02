@@ -61,7 +61,8 @@ const Login = () => {
     if (!isValid) {
       setAPIStatus({ ...apiStatus, message: "" });
     }
-  }, [isValid, apiStatus]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isValid]);
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Typography variant="h6" gutterBottom>

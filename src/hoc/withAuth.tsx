@@ -19,7 +19,8 @@ export const withAuth = (OriginalComponent: any) => {
                 // return null;
             }
         }
-    }, [pathName, router])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     return <OriginalComponent {...props} />;
   }
 
