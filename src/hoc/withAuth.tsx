@@ -20,7 +20,7 @@ export const withAuth = (OriginalComponent: any) => {
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [pathName])
     return <OriginalComponent {...props} />;
   }
 
