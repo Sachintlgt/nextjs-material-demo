@@ -61,7 +61,7 @@ const Login = () => {
     if (!isValid) {
       setAPIStatus({ ...apiStatus, message: "" });
     }
-  }, [isValid]);
+  }, [isValid, apiStatus]);
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Typography variant="h6" gutterBottom>

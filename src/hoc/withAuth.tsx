@@ -19,7 +19,7 @@ export const withAuth = (OriginalComponent: any) => {
                 // return null;
             }
         }
-    }, [])
+    }, [pathName, router])
     return <OriginalComponent {...props} />;
   }
 

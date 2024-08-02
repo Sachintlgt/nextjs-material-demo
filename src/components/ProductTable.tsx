@@ -130,11 +130,10 @@ const ProductTable: React.FC<{ data: IProducts[] }> = ({ data }) => {
       <CommonTable heading="Products" table={table} />
       <CommonModal
         open={modalData.open as boolean}
-        children={modalData.children}
         handleClose={() => {
           setModalData({ ...modalData, open: false });
         }}
-      />
+      >{modalData.children}</CommonModal>
     </>
   );
 };
