@@ -5,6 +5,9 @@ Installation
 npm i
 ```
 
+Create a new file .env
+Copy .env.sample file into .env
+
 Run the development server:
 
 ```bash
