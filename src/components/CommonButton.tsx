@@ -12,7 +12,7 @@ const CommonButton: React.FC<ICommonButton> = ({
     size = 'medium'
 }) => {
   return (
-    <Button size={size} color={color ? color : 'primary'} disabled={disabled} type={type} onClick={onClickHandler} variant={variant}>{title}</Button>
+    <Button data-testid="btn" size={size} color={color ? color : 'primary'} disabled={disabled} type={type} onClick={onClickHandler} variant={variant}>{title}</Button>
   );
 }
 export default CommonButton;

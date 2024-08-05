@@ -1,5 +1,6 @@
 import { IModal } from "@/interfaces/interfaces";
-import { Box, Modal } from "@mui/material";
+import { Box, Icon, Modal } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -16,13 +17,21 @@ const style = {
 /** A common Modal which can be used and modified as per requirement */
 const CommonModal: React.FC<IModal> = ({handleClose, open, children}) => {
     return <Modal
+    data-testid="modal-dialog"
     open={open}
     onClose={handleClose}
     aria-labelledby="modal-modal-title"
     aria-describedby="modal-modal-description"
   >
     <Box sx={style}>
-      {children}
+    <Box display="flex" gap={1} alignItems="center">
+                <Box flexGrow={1}>{children}</Box>
+                <Box alignSelf={"flex-start"}>
+                    <Icon component={CloseIcon} onClick={handleClose} sx={{
+                      cursor: 'pointer', position: 'absolute', top: 2
+                    }}></Icon>
+                </Box>
+          </Box>
     </Box>
   </Modal>
 }

@@ -66,13 +66,15 @@ const Login = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Typography variant="h6" gutterBottom>
-        Login
+        Sign in
       </Typography>
       <TextField
         label="UserName"
+        data-testid="userName"
         fullWidth
         disabled={apiStatus.loading}
         margin="normal"
+        aria-invalid={!!errors.username}
         defaultValue={defaultValues.username}
         {...register("username")}
         error={!!errors.username}
@@ -80,10 +82,12 @@ const Login = () => {
       />
       <TextField
         label="Password"
+        data-testid="password"
         type="password"
         fullWidth
         disabled={apiStatus.loading}
         margin="normal"
+        aria-invalid={!!errors.password}
         defaultValue={defaultValues.password}
         {...register("password")}
         error={!!errors.password}
